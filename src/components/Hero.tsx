@@ -74,7 +74,7 @@ export const Hero: React.FC = () => {
                 <div className="flex gap-4 items-center">
                   <span className="text-qu-cyan">&gt;</span>
                   <span className="w-20 text-text-muted">RESUME:</span>
-                  <a href="/cv.pdf" target="_blank" rel="noreferrer" className="text-qu-green hover:underline bg-qu-green/10 px-2 py-0.5 rounded border border-qu-green/30">./download_cv.sh</a>
+                  <a href="/cv.pdf" download="Alimzhan_Bekmurzin_CV.pdf" target="_blank" rel="noreferrer" className="text-qu-green hover:underline bg-qu-green/10 px-2 py-0.5 rounded border border-qu-green/30">./download_cv.sh</a>
                 </div>
               </div>
             </div>

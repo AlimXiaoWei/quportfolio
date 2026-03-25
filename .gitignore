@@ -32,3 +32,4 @@ error.log
 error.txt
 error2.txt
 *.log
+deployment_guide.md
