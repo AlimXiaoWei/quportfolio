@@ -22,3 +22,13 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Hosting
+.vercel/
+.netlify/
+
+# Local error logs
+error.log
+error.txt
+error2.txt
+*.log
