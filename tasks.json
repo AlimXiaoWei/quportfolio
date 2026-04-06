@@ -1,0 +1,63 @@
+{
+    "tasks": [
+        {
+            "id": "mobile-layout",
+            "title": "Responsive Layout Implementation",
+            "description": "Adjust Layout.tsx to hide sidebar on mobile and handle the main content padding.",
+            "status": "completed",
+            "subtasks": [
+                "Hide Sidebar by default on small screens",
+                "Adjust main padding (p-4 instead of p-8 on mobile)",
+                "Add mobile menu state to Layout component"
+            ]
+        },
+        {
+            "id": "mobile-topbar",
+            "title": "Mobile TopBar & Navigation",
+            "description": "Simplify TopBar for narrow screens and add a hamburger menu toggle.",
+            "status": "completed",
+            "subtasks": [
+                "Add hamburger menu button for mobile",
+                "Shorten breadcrumb path on small screens",
+                "Hide uptime and full date on mobile",
+                "Ensure TopBar buttons wrap or hide appropriately"
+            ]
+        },
+        {
+            "id": "hero-responsiveness",
+            "title": "Hero Section Optimization",
+            "description": "Ensure the Terminal interface in Hero.tsx adapts to mobile viewports.",
+            "status": "completed",
+            "subtasks": [
+                "Make ASCII logo font size responsive",
+                "Replace fixed pixel widths with flexible classes",
+                "Ensure side panels stack vertically on small screens",
+                "Adjust command line line-breaks for narrow widths"
+            ]
+        },
+        {
+            "id": "view-refactoring",
+            "title": "Content Views Adaptation",
+            "description": "Update ProjectView, ExperienceView, and SkillsView for mobile readability.",
+            "status": "completed",
+            "subtasks": [
+                "Adjust ProjectView grid to 1 column on mobile",
+                "Refactor ExperienceView timeline for narrow layout",
+                "Ensure SkillsView groups wrap correctly without overflow",
+                "Check touch target sizes for all interactive elements"
+            ]
+        },
+        {
+            "id": "testing-verification",
+            "title": "Mobile Testing & Verification",
+            "description": "Verify the site looks and functions correctly on various mobile viewports.",
+            "status": "completed",
+            "subtasks": [
+                "Test on 375px (iPhone SE)",
+                "Test on 768px (iPad)",
+                "Verify menu toggle functionality",
+                "Check for any horizontal scroll/overflow issues"
+            ]
+        }
+    ]
+}

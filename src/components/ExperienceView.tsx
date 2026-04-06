@@ -92,14 +92,14 @@ export const ExperienceView: React.FC = () => {
         </div>
         
         {/* Terminal Content */}
-        <div className="p-6 font-mono text-sm flex flex-col gap-4 overflow-y-auto">
-          <div className="flex gap-2">
-            <span className="text-qu-purple font-bold">root@qu:~/experience$</span>
+        <div className="p-4 md:p-6 font-mono text-sm flex flex-col gap-4 overflow-y-auto">
+          <div className="flex gap-2 flex-wrap sm:flex-nowrap">
+            <span className="text-qu-purple font-bold shrink-0">root@qu:~/experience$</span>
             <span className="text-text-primary">cat EXECUTION_LOGS.md</span>
           </div>
 
-          <div className="border border-bg-panel bg-bg-panel/30 p-4 rounded-sm mt-2">
-            <h1 className="text-2xl font-display text-qu-cyan mb-8 uppercase tracking-wider">
+          <div className="border border-bg-panel bg-bg-panel/30 p-3 md:p-4 rounded-sm mt-2">
+            <h1 className="text-lg md:text-2xl font-display text-qu-cyan mb-8 uppercase tracking-wider leading-tight">
               # EXECUTION_LOGS (Professional Experience)
             </h1>
             
@@ -115,19 +115,19 @@ export const ExperienceView: React.FC = () => {
                                    'text-qu-cyan border-qu-cyan/30 bg-qu-cyan/10';
                 
                 return (
-                  <div key={idx} className="relative pl-8">
+                  <div key={idx} className="relative pl-6 md:pl-8">
                     {/* Timeline node */}
                     <div className={`absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-bg-base ${isRunning ? 'bg-qu-green animate-pulse' : 'bg-bg-panel'}`}></div>
                     
                     <div className="flex flex-col gap-4">
                       <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-bg-panel pb-2">
                         <div>
-                          <span className="text-text-muted text-xs tracking-widest">[{exp.period}]</span>
-                          <h2 className="text-lg font-bold text-qu-purple mt-1">
+                          <span className="text-text-muted text-[10px] md:text-xs tracking-widest break-all">[{exp.period}]</span>
+                          <h2 className="text-base md:text-lg font-bold text-qu-purple mt-1 leading-tight">
                             {exp.role} <span className="text-text-muted font-normal">@</span> <span className="text-text-primary">{exp.company}</span>
                           </h2>
                         </div>
-                        <div className={`px-2 py-1 text-xs font-bold rounded-sm border ${statusColor} self-start`}>
+                        <div className={`px-2 py-1 text-[10px] md:text-xs font-bold rounded-sm border ${statusColor} self-start`}>
                           Status: {exp.status}
                         </div>
                       </div>
@@ -135,8 +135,8 @@ export const ExperienceView: React.FC = () => {
                       <div className="flex flex-col gap-3">
                         {exp.highlights.map((hl, i) => (
                           <div key={i} className="flex items-start gap-2">
-                            <span className="text-qu-cyan mt-0.5">&gt;</span>
-                            <div>
+                            <span className="text-qu-cyan mt-0.5 shrink-0">&gt;</span>
+                            <div className="text-sm md:text-base">
                               <span className="text-qu-cyan font-bold">{hl.title}: </span>
                               <span className="text-text-muted">{hl.desc}</span>
                             </div>
@@ -150,37 +150,37 @@ export const ExperienceView: React.FC = () => {
             </div>
             
             <div className="mt-12 pt-8 border-t border-bg-panel border-dashed relative">
-              <h2 className="text-xl font-display text-qu-cyan mb-8 uppercase tracking-wider">
+              <h2 className="text-lg md:text-xl font-display text-qu-cyan mb-8 uppercase tracking-wider leading-tight">
                 # EDUCATION_LOGS
               </h2>
               
               <div className="flex flex-col gap-8 relative">
                 <div className="absolute left-[7.5px] top-2 bottom-2 w-[1px] bg-bg-panel"></div>
                 
-                <div className="relative pl-8">
+                <div className="relative pl-6 md:pl-8">
                   <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-bg-base bg-bg-panel"></div>
                   <div className="flex flex-col gap-2">
-                    <span className="text-text-muted text-xs tracking-widest">[2023 - 2025]</span>
-                    <h3 className="text-lg font-bold text-qu-purple">
-                      Master <span className="text-text-muted font-normal">|</span> <span className="text-text-primary">Eurasian National University, Astana</span>
+                    <span className="text-text-muted text-[10px] md:text-xs tracking-widest">[2023 - 2025]</span>
+                    <h3 className="text-base md:text-lg font-bold text-qu-purple leading-tight">
+                      Master <span className="text-text-muted font-normal hidden xs:inline">|</span> <span className="text-text-primary">Eurasian National University</span>
                     </h3>
                     <div className="flex items-start gap-2 mt-1">
-                      <span className="text-qu-cyan mt-0.5">&gt;</span>
-                      <span className="text-text-muted">Artificial Intelligence Technologies</span>
+                      <span className="text-qu-cyan mt-0.5 shrink-0">&gt;</span>
+                      <span className="text-text-muted text-sm">Artificial Intelligence Technologies</span>
                     </div>
                   </div>
                 </div>
 
-                <div className="relative pl-8">
+                <div className="relative pl-6 md:pl-8">
                   <div className="absolute left-0 top-1.5 w-4 h-4 rounded-full border-2 border-bg-base bg-bg-panel"></div>
                   <div className="flex flex-col gap-2">
-                    <span className="text-text-muted text-xs tracking-widest">[2019 - 2023]</span>
-                    <h3 className="text-lg font-bold text-qu-purple">
-                      Bachelor <span className="text-text-muted font-normal">|</span> <span className="text-text-primary">Eurasian National University, Astana</span>
+                    <span className="text-text-muted text-[10px] md:text-xs tracking-widest">[2019 - 2023]</span>
+                    <h3 className="text-base md:text-lg font-bold text-qu-purple leading-tight">
+                      Bachelor <span className="text-text-muted font-normal hidden xs:inline">|</span> <span className="text-text-primary">Eurasian National University</span>
                     </h3>
                     <div className="flex items-start gap-2 mt-1">
-                      <span className="text-qu-cyan mt-0.5">&gt;</span>
-                      <span className="text-text-muted">Computer and Software Engineering</span>
+                      <span className="text-qu-cyan mt-0.5 shrink-0">&gt;</span>
+                      <span className="text-text-muted text-sm">Computer and Software Engineering</span>
                     </div>
                   </div>
                 </div>
@@ -189,8 +189,8 @@ export const ExperienceView: React.FC = () => {
           </div>
 
           <div className="flex gap-2 animate-pulse mt-4">
-            <span className="text-qu-purple font-bold">root@qu:~/experience$</span>
-            <span className="w-2 h-4 bg-text-primary inline-block"></span>
+            <span className="text-qu-purple font-bold shrink-0">root@qu:~/experience$</span>
+            <span className="w-2 h-4 bg-text-primary inline-block shrink-0"></span>
           </div>
         </div>
       </div>

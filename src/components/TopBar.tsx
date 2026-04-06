@@ -4,9 +4,11 @@ import { projectsData } from '../data/projects';
 interface TopBarProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
+  isMenuOpen: boolean;
+  setIsMenuOpen: (isOpen: boolean) => void;
 }
 
-export const TopBar: React.FC<TopBarProps> = ({ activeTab, setActiveTab }) => {
+export const TopBar: React.FC<TopBarProps> = ({ activeTab, setActiveTab, isMenuOpen, setIsMenuOpen }) => {
   const [time, setTime] = useState('');
   const [uptime, setUptime] = useState(0);
 
@@ -36,7 +38,7 @@ export const TopBar: React.FC<TopBarProps> = ({ activeTab, setActiveTab }) => {
       const isSystem = project.type === 'sys';
       return (
         <>
-          <span className="text-text-muted">{isSystem ? 'system/' : 'projects/'}</span>
+          <span className="text-text-muted hidden sm:inline">{isSystem ? 'system/' : 'projects/'}</span>
           <span className={isSystem ? 'text-qu-green' : 'text-qu-cyan'}>{project.name}</span>
         </>
       );
@@ -45,14 +47,31 @@ export const TopBar: React.FC<TopBarProps> = ({ activeTab, setActiveTab }) => {
   };
 
   return (
-    <header className="h-12 border-b border-bg-panel bg-bg-base flex items-center justify-between px-4 text-sm shrink-0">
+    <header className="h-12 border-b border-bg-panel bg-bg-base flex items-center justify-between px-4 text-sm shrink-0 relative z-50">
       <div className="flex items-center gap-4">
-        <div className="flex items-center gap-2 text-qu-purple font-bold tracking-widest">
-          <span className="text-qu-cyan">QU</span> | ~/alimzhan/portfolio/{getPath()}
+        {/* Mobile Menu Button */}
+        <button 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden p-1 hover:bg-bg-panel rounded transition-colors text-qu-cyan"
+          aria-label="Toggle Menu"
+        >
+          {isMenuOpen ? (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          )}
+        </button>
+
+        <div className="flex items-center gap-2 text-qu-purple font-bold tracking-widest truncate">
+          <span className="text-qu-cyan shrink-0">QU</span>
+          <span className="hidden xs:inline text-text-muted">|</span>
+          <span className="truncate">
+            <span className="hidden sm:inline">~/alimzhan/portfolio/</span>{getPath()}
+          </span>
         </div>
       </div>
       
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-6 hidden lg:flex">
         <div className="flex bg-bg-panel border border-bg-panel rounded-sm overflow-hidden">
           <button 
             onClick={() => setActiveTab('home')}
@@ -70,12 +89,13 @@ export const TopBar: React.FC<TopBarProps> = ({ activeTab, setActiveTab }) => {
           <span>UPTIME:</span>
           <span className="text-qu-cyan">{formatUptime(uptime)}</span>
         </div>
-        <div className="hidden md:block">
+        <div className="hidden sm:block">
           {time}
         </div>
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 rounded-full bg-qu-green animate-pulse" />
-          <span className="text-qu-green">ONLINE</span>
+          <span className="text-qu-green inline sm:hidden text-[10px]">ON</span>
+          <span className="text-qu-green hidden sm:inline">ONLINE</span>
         </div>
       </div>
     </header>

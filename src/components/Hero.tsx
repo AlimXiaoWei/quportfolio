@@ -18,9 +18,9 @@ export const Hero: React.FC = () => {
         </div>
         
         {/* Terminal Content */}
-        <div className="p-6 font-mono text-sm flex flex-col gap-6 overflow-y-auto">
+        <div className="p-4 md:p-6 font-mono text-sm flex flex-col gap-6 overflow-y-auto">
           {/* ASCII Logo */}
-          <div className="text-qu-purple whitespace-pre font-bold leading-none tracking-tighter overflow-x-auto" style={{ fontSize: '10px', lineHeight: '10px' }}>
+          <div className="text-qu-purple whitespace-pre font-bold leading-none tracking-tighter overflow-x-auto py-2" style={{ fontSize: 'min(2.5vw, 10px)', lineHeight: 'min(2.5vw, 10px)' }}>
 {`
    █████╗ ██╗     ██╗███╗   ███╗███████╗██╗  ██╗█████╗ ███╗   ██╗
   ██╔══██╗██║     ██║████╗ ████║╚══███╔╝██║  ██║██╔══██╗████╗  ██║
@@ -30,15 +30,15 @@ export const Hero: React.FC = () => {
   ╚═╝  ╚═╝╚══════╝╚═╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
 `}
           </div>
-          <div className="text-text-muted text-xs">
+          <div className="text-text-muted text-[10px] sm:text-xs">
             -- ALIMZHAN PORTFOLIO OS v2.5.1-stable --------------------------
           </div>
 
           {/* Terminal Commands */}
           <div className="flex flex-col gap-4">
             <div>
-              <div className="flex gap-2">
-                <span className="text-qu-purple font-bold">root@qu:~$</span>
+              <div className="flex gap-2 flex-wrap sm:flex-nowrap">
+                <span className="text-qu-purple font-bold shrink-0">root@qu:~$</span>
                 <span className="text-text-primary">whoami</span>
               </div>
               <div className="pl-4 mt-1">
@@ -51,35 +51,35 @@ export const Hero: React.FC = () => {
             </div>
 
             <div>
-              <div className="flex gap-2">
-                <span className="text-qu-purple font-bold">root@qu:~$</span>
+              <div className="flex gap-2 flex-wrap sm:flex-nowrap">
+                <span className="text-qu-purple font-bold shrink-0">root@qu:~$</span>
                 <span className="text-text-primary">cat ~/.socials</span>
               </div>
               <div className="pl-4 mt-1 flex flex-col gap-1">
                 <div className="flex gap-4 items-center">
                   <span className="text-qu-cyan">&gt;</span>
-                  <span className="w-20 text-text-muted">EMAIL:</span>
-                  <a href="mailto:alimxiaowei@gmail.com" className="text-qu-green hover:underline">alimxiaowei@gmail.com</a>
+                  <span className="min-w-[70px] sm:w-20 text-text-muted text-xs sm:text-sm">EMAIL:</span>
+                  <a href="mailto:alimxiaowei@gmail.com" className="text-qu-green hover:underline truncate">alimxiaowei@gmail.com</a>
                 </div>
                 <div className="flex gap-4 items-center">
                   <span className="text-qu-cyan">&gt;</span>
-                  <span className="w-20 text-text-muted">GITHUB:</span>
-                  <a href="https://github.com/AlimXiaoWei" target="_blank" rel="noreferrer" className="text-qu-green hover:underline">https://github.com/AlimXiaoWei</a>
+                  <span className="min-w-[70px] sm:w-20 text-text-muted text-xs sm:text-sm">GITHUB:</span>
+                  <a href="https://github.com/AlimXiaoWei" target="_blank" rel="noreferrer" className="text-qu-green hover:underline truncate">AlimXiaoWei</a>
                 </div>
                 <div className="flex gap-4 items-center">
                   <span className="text-qu-cyan">&gt;</span>
-                  <span className="w-20 text-text-muted">LINKEDIN:</span>
-                  <a href="https://www.linkedin.com/in/alimzhanbekmurzin/" target="_blank" rel="noreferrer" className="text-qu-green hover:underline">https://www.linkedin.com/in/alimzhanbekmurzin/</a>
+                  <span className="min-w-[70px] sm:w-20 text-text-muted text-xs sm:text-sm">LINKEDIN:</span>
+                  <a href="https://www.linkedin.com/in/alimzhanbekmurzin/" target="_blank" rel="noreferrer" className="text-qu-green hover:underline truncate">alimzhanbekmurzin</a>
                 </div>
                 <div className="flex gap-4 items-center">
                   <span className="text-qu-cyan">&gt;</span>
-                  <span className="w-20 text-text-muted">RESUME:</span>
-                  <a href="/cv.pdf" download="Alimzhan_Bekmurzin_CV.pdf" target="_blank" rel="noreferrer" className="text-qu-green hover:underline bg-qu-green/10 px-2 py-0.5 rounded border border-qu-green/30">./download_cv.sh</a>
+                  <span className="min-w-[70px] sm:w-20 text-text-muted text-xs sm:text-sm">RESUME:</span>
+                  <a href="/cv.pdf" download="Alimzhan_Bekmurzin_CV.pdf" target="_blank" rel="noreferrer" className="text-qu-green hover:underline bg-qu-green/10 px-2 py-0.5 rounded border border-qu-green/30 text-xs sm:text-sm">./download_cv.sh</a>
                 </div>
               </div>
             </div>
 
-            <div>
+            <div className="hidden xs:block">
               <div className="flex gap-2">
                 <span className="text-qu-purple font-bold">root@qu:~$</span>
                 <span className="text-text-primary">uname -r</span>
@@ -90,27 +90,27 @@ export const Hero: React.FC = () => {
             </div>
 
             <div>
-              <div className="flex gap-2">
-                <span className="text-qu-purple font-bold">root@qu:~$</span>
-                <span className="text-text-primary">ps aux | grep [skills]</span>
+              <div className="flex gap-2 flex-wrap sm:flex-nowrap">
+                <span className="text-qu-purple font-bold shrink-0">root@qu:~$</span>
+                <span className="text-text-primary truncate">ps aux | grep [skills]</span>
               </div>
               <div className="pl-4 mt-1 flex flex-col gap-1">
-                <div className="flex gap-4">
+                <div className="flex gap-2 sm:gap-4 flex-wrap">
                   <span className="text-qu-cyan">&gt;</span>
-                  <span className="w-16">PID 1</span>
-                  <span className="w-32">- QUOS</span>
+                  <span className="min-w-[40px] sm:w-16">PID 1</span>
+                  <span className="min-w-[80px] sm:w-32">- QUOS</span>
                   <span className="text-qu-green">[RUNNING]</span>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-2 sm:gap-4 flex-wrap">
                   <span className="text-qu-cyan">&gt;</span>
-                  <span className="w-16">PID 42</span>
-                  <span className="w-32">- QUParser</span>
+                  <span className="min-w-[40px] sm:w-16">PID 42</span>
+                  <span className="min-w-[80px] sm:w-32">- QUParser</span>
                   <span className="text-qu-green">[READY]</span>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex gap-2 sm:gap-4 flex-wrap">
                   <span className="text-qu-cyan">&gt;</span>
-                  <span className="w-16">PID 1337</span>
-                  <span className="w-32">- QUSillyDevs</span>
+                  <span className="min-w-[40px] sm:w-16">PID 1337</span>
+                  <span className="min-w-[80px] sm:w-32">- QUSillyDevs</span>
                   <span className="text-yellow-500">[ACTIVE]</span>
                 </div>
               </div>
@@ -129,15 +129,15 @@ export const Hero: React.FC = () => {
         {/* System Health Panel */}
         <div className="bg-bg-base border border-bg-panel rounded-md p-4 shadow-xl">
           <div className="flex justify-between items-center mb-4 border-b border-bg-panel pb-2">
-            <h3 className="text-qu-purple text-xs tracking-widest uppercase font-bold">System Health - tech_stack.monitor</h3>
+            <h3 className="text-qu-purple text-[10px] sm:text-xs tracking-widest uppercase font-bold">System Health - tech_stack.monitor</h3>
             <div className="w-2 h-2 rounded-full bg-qu-cyan animate-pulse"></div>
           </div>
           
-          <div className="text-xs text-text-muted mb-4">
+          <div className="text-[10px] text-text-muted mb-4 uppercase">
             RESOURCE USAGE -------------------
           </div>
 
-          <div className="flex flex-col gap-3 text-sm">
+          <div className="flex flex-col gap-3 text-xs sm:text-sm">
             {[
               { name: 'Python', value: 95, color: 'bg-qu-purple' },
               { name: 'PyTorch/TF', value: 90, color: 'bg-qu-cyan' },
@@ -150,19 +150,19 @@ export const Hero: React.FC = () => {
               { name: 'AWS/Azure', value: 78, color: 'bg-qu-purple' },
               { name: 'SQL/VectorDB', value: 82, color: 'bg-qu-cyan' },
             ].map((skill) => (
-              <div key={skill.name} className="flex items-center justify-between gap-4">
-                <span className="w-32 text-text-primary">{skill.name}</span>
-                <div className="flex-1 flex items-center gap-2">
-                  <span className="text-text-muted">[</span>
-                  <div className="flex-1 h-3 bg-bg-panel relative overflow-hidden">
+              <div key={skill.name} className="flex items-center justify-between gap-2 sm:gap-4">
+                <span className="min-w-[80px] sm:w-32 text-text-primary text-xs truncate">{skill.name}</span>
+                <div className="flex-1 flex items-center gap-1 sm:gap-2">
+                  <span className="text-text-muted hidden xs:inline">[</span>
+                  <div className="flex-1 h-2 sm:h-3 bg-bg-panel relative overflow-hidden">
                     <div 
                       className={`absolute top-0 left-0 h-full ${skill.color}`} 
                       style={{ width: `${skill.value}%` }}
                     ></div>
                   </div>
-                  <span className="text-text-muted">]</span>
+                  <span className="text-text-muted hidden xs:inline">]</span>
                 </div>
-                <span className="w-8 text-right text-qu-cyan">{skill.value}%</span>
+                <span className="w-8 text-right text-qu-cyan text-[10px] sm:text-xs">{skill.value}%</span>
               </div>
             ))}
           </div>
@@ -170,39 +170,34 @@ export const Hero: React.FC = () => {
 
         {/* Process Info Panel */}
         <div className="bg-bg-base border border-bg-panel rounded-md p-4 shadow-xl">
-          <div className="text-xs text-text-muted mb-4">
+          <div className="text-[10px] text-text-muted mb-4 uppercase">
             PROCESS INFO ---------------------
           </div>
-          <div className="flex flex-col gap-2 text-sm">
-            <div className="flex">
-              <span className="w-24 text-text-muted">UID</span>
-              <span className="text-text-muted">:</span>
-              <span className="ml-4 text-qu-cyan">alimzhan</span>
+          <div className="flex flex-col gap-2 text-xs sm:text-sm">
+            <div className="flex justify-between sm:justify-start">
+              <span className="w-20 sm:w-24 text-text-muted uppercase text-[10px]">UID</span>
+              <span className="text-text-muted hidden sm:inline">:</span>
+              <span className="sm:ml-4 text-qu-cyan">alimzhan</span>
             </div>
-            <div className="flex">
-              <span className="w-24 text-text-muted">ROLE</span>
-              <span className="text-text-muted">:</span>
-              <span className="ml-4 text-qu-purple">Senior ML/AI Eng</span>
+            <div className="flex justify-between sm:justify-start">
+              <span className="w-20 sm:w-24 text-text-muted uppercase text-[10px]">ROLE</span>
+              <span className="text-text-muted hidden sm:inline">:</span>
+              <span className="sm:ml-4 text-qu-purple text-right sm:text-left">Senior ML/AI Eng</span>
             </div>
-            <div className="flex">
-              <span className="w-24 text-text-muted">RUNTIME</span>
-              <span className="text-text-muted">:</span>
-              <span className="ml-4 text-qu-cyan">5+ years</span>
+            <div className="flex justify-between sm:justify-start">
+              <span className="w-20 sm:w-24 text-text-muted uppercase text-[10px]">RUNTIME</span>
+              <span className="text-text-muted hidden sm:inline">:</span>
+              <span className="sm:ml-4 text-qu-cyan">5+ years</span>
             </div>
-            <div className="flex">
-              <span className="w-24 text-text-muted">STATUS</span>
-              <span className="text-text-muted">:</span>
-              <span className="ml-4 text-qu-green">[AVAILABLE_REMOTE]</span>
+            <div className="flex justify-between sm:justify-start">
+              <span className="w-20 sm:w-24 text-text-muted uppercase text-[10px]">STATUS</span>
+              <span className="text-text-muted hidden sm:inline">:</span>
+              <span className="sm:ml-4 text-qu-green text-right sm:text-left">[AVAILABLE]</span>
             </div>
-            <div className="flex">
-              <span className="w-24 text-text-muted">FOCUS</span>
-              <span className="text-text-muted">:</span>
-              <span className="ml-4 text-qu-purple">GenAI, LLMs, CV</span>
-            </div>
-            <div className="flex">
-              <span className="w-24 text-text-muted">LOC</span>
-              <span className="text-text-muted">:</span>
-              <span className="ml-4 text-qu-cyan">Kazakhstan (GMT+5)</span>
+            <div className="flex justify-between sm:justify-start">
+              <span className="w-20 sm:w-24 text-text-muted uppercase text-[10px]">LOC</span>
+              <span className="text-text-muted hidden sm:inline">:</span>
+              <span className="sm:ml-4 text-qu-cyan text-right sm:text-left">KAZAKHSTAN</span>
             </div>
           </div>
         </div>

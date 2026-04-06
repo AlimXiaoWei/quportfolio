@@ -68,21 +68,21 @@ export const SkillsView: React.FC = () => {
         </div>
         
         {/* Terminal Content */}
-        <div className="p-6 font-mono text-sm flex flex-col gap-4 overflow-y-auto">
-          <div className="flex gap-2">
-            <span className="text-qu-purple font-bold">root@qu:~/skills$</span>
+        <div className="p-4 md:p-6 font-mono text-sm flex flex-col gap-4 overflow-y-auto">
+          <div className="flex gap-2 flex-wrap sm:flex-nowrap">
+            <span className="text-qu-purple font-bold shrink-0">root@qu:~/skills$</span>
             <span className="text-text-primary">cat SYSTEM_CAPABILITIES.md</span>
           </div>
 
-          <div className="border border-bg-panel bg-bg-panel/30 p-4 rounded-sm mt-2">
-            <h1 className="text-2xl font-display text-qu-cyan mb-6 uppercase tracking-wider">
+          <div className="border border-bg-panel bg-bg-panel/30 p-3 md:p-4 rounded-sm mt-2">
+            <h1 className="text-lg md:text-2xl font-display text-qu-cyan mb-6 uppercase tracking-wider leading-tight">
               # SYSTEM_CAPABILITIES (Skills)
             </h1>
             
             <div className="flex flex-col gap-8">
               {modules.map((mod, idx) => (
                 <div key={idx} className="flex flex-col gap-2">
-                  <h2 className="text-qu-purple font-bold text-lg">
+                  <h2 className="text-qu-purple font-bold text-base md:text-lg">
                     <span className="text-qu-green">##</span> Module: {mod.name}
                   </h2>
                   <ul className="list-none flex flex-col gap-2 pl-4 border-l border-bg-panel ml-2">
@@ -90,19 +90,19 @@ export const SkillsView: React.FC = () => {
                       const parts = item.split(':');
                       if (parts.length > 1) {
                         return (
-                          <li key={i} className="flex items-start gap-2 text-text-primary">
-                            <span className="text-qu-cyan mt-0.5">├─</span>
+                          <li key={i} className="flex items-start gap-2 text-text-primary text-xs md:text-sm">
+                            <span className="text-qu-cyan mt-0.5 shrink-0">├─</span>
                             <div>
-                              <span className="text-qu-cyan font-bold">{parts[0]}:</span>
-                              <span className="text-text-muted">{parts.slice(1).join(':')}</span>
+                                <span className="text-qu-cyan font-bold">{parts[0]}:</span>
+                                <span className="text-text-muted"> {parts.slice(1).join(':')}</span>
                             </div>
                           </li>
                         );
                       }
                       return (
-                        <li key={i} className="flex items-start gap-2 text-text-muted">
-                          <span className="text-qu-cyan mt-0.5">├─</span>
-                          {item}
+                        <li key={i} className="flex items-start gap-2 text-text-muted text-xs md:text-sm">
+                          <span className="text-qu-cyan mt-0.5 shrink-0">├─</span>
+                          <span>{item}</span>
                         </li>
                       );
                     })}
@@ -113,8 +113,8 @@ export const SkillsView: React.FC = () => {
           </div>
 
           <div className="flex gap-2 animate-pulse mt-4">
-            <span className="text-qu-purple font-bold">root@qu:~/skills$</span>
-            <span className="w-2 h-4 bg-text-primary inline-block"></span>
+            <span className="text-qu-purple font-bold shrink-0">root@qu:~/skills$</span>
+            <span className="w-2 h-4 bg-text-primary inline-block shrink-0"></span>
           </div>
         </div>
       </div>
